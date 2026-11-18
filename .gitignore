@@ -1,0 +1,13 @@
+.venv/
+.secrets/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+Thumbs.db
+dist/
+*.sqlite3
+SYNC-TEST-*

@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "fields": [
+    {
+      "key": "build",
+      "label": "整体体型",
+      "default": "medium",
+      "options": [
+        {
+          "value": "preserve",
+          "label": "保持照片中的体型",
+          "prompt": "Preserve the body shape and natural proportions visible in the full-body reference photo, except for regions explicitly overridden below."
+        },
+        {
+          "value": "slender",
+          "label": "纤细",
+          "prompt": "Use a slender narrow-framed body with visibly slim torso, upper arms, thighs and calves, without exaggerating leg length or making the waist unnaturally small."
+        },
+        {
+          "value": "medium",
+          "label": "适中",
+          "prompt": "Use a medium-size body with moderate torso and limb volume and ordinary natural proportions."
+        },
+        {
+          "value": "fuller",
+          "label": "饱满",
+          "prompt": "Use a distinctly fuller soft-bodied physique with greater volume across torso, upper arms, abdomen, hips, thighs and calves. Retain natural fullness instead of automatically slimming the person."
+        },
+        {
+          "value": "athletic",
+          "label": "健壮",
+          "prompt": "Use a strong athletic physique with greater shoulder, upper-back, arm and thigh muscle volume, without turning the person into a competitive bodybuilder."
+        }
+      ]
+    },
+    {
+      "key": "shoulder",
+      "label": "肩部",
+      "default": "natural",
+      "options": [
+        {
+          "value": "natural",
+          "label": "自然肩宽",
+          "prompt": ""
+        },
+        {
+          "value": "narrow",
+          "label": "肩部较窄",
+          "prompt": "Shoulder-specific override: relatively narrow shoulder breadth; do not reduce the hips or other body regions merely to match."
+        },
+        {
+          "value": "broad",
+          "label": "肩部较宽",
+          "prompt": "Shoulder-specific override: relatively broad shoulders and upper back; do not widen the waist or hips merely to match."
+        }
+      ]
+    },
+    {
+      "key": "waist",
+      "label": "腰腹",
+      "default": "natural",
+      "options": [
+        {
+          "value": "natural",
+          "label": "自然腰腹",
+          "prompt": ""
+        },
+        {
+          "value": "defined",
+          "label": "腰线较明显",
+          "prompt": "Waist-specific override: a noticeably defined waist relative to chest and hips, while retaining the selected overall body volume."
+        },
+        {
+          "value": "full",
+          "label": "腰腹较饱满",
+          "prompt": "Waist-specific override: a naturally fuller abdomen with a softer and less tapered waist. Do not flatten the abdomen or automatically cinch the waist."
+        }
+      ]
+    },
+    {
+      "key": "hip",
+      "label": "臀部",
+      "default": "natural",
+      "options": [
+        {
+          "value": "natural",
+          "label": "自然臀宽",
+          "prompt": ""
+        },
+        {
+          "value": "narrow",
+          "label": "臀部较窄",
+          "prompt": "Hip-specific override: relatively narrow hips, without changing shoulder breadth or overall body volume elsewhere."
+        },
+        {
+          "value": "full",
+          "label": "臀部较丰满",
+          "prompt": "Hip-specific override: wider fuller hips and fuller upper thighs, while retaining the selected shoulder and waist shape."
+        }
+      ]
+    },
+    {
+      "key": "proportion",
+      "label": "上下身比例",
+      "default": "natural",
+      "options": [
+        {
+          "value": "natural",
+          "label": "自然上下身比例",
+          "prompt": ""
+        },
+        {
+          "value": "torso_long",
+          "label": "上身偏长 · 腿偏短",
+          "prompt": "Proportion-specific override: a relatively longer torso and shorter legs at the same overall height. Do not achieve this by cropping the feet or changing camera perspective."
+        },
+        {
+          "value": "legs_long",
+          "label": "腿偏长 · 上身偏短",
+          "prompt": "Proportion-specific override: relatively longer legs and a shorter torso at the same overall height, without extreme fashion-illustration proportions or a changed camera angle."
+        }
+      ]
+    }
+  ]
+}

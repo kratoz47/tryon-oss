@@ -1,0 +1,540 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#101114"><title>AI 私人衣橱 · 试衣间</title><style>
+:root{color-scheme:dark;--bg:#101114;--surface:#202125;--soft:#292a2f;--ink:#f5f4f1;--muted:#aaa9ac;--line:#ffffff15;--primary:#ff682e;--primary-soft:#ff682e19;--danger:#ff9b8a;--radius:24px;--shadow:0 18px 50px #0003}
+*{box-sizing:border-box} [hidden]{display:none!important} body{margin:0;background:radial-gradient(ellipse at 85% 0%,#39241d55,transparent 44%),var(--bg);color:var(--ink);font:14px/1.6 -apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei',sans-serif}button,input,select{font:inherit;color:inherit}button{cursor:pointer}button,input:not([type=range]),select{min-height:44px;border-radius:14px;border:1px solid var(--line);background:#ffffff07;padding:10px 14px;max-width:100%}button{font-weight:650;transition:background .15s,border-color .15s,transform .15s}button:hover:not(:disabled){background:#ffffff13;border-color:#ffffff40}button:active:not(:disabled){transform:scale(.98)}button:disabled{opacity:.45;cursor:wait}button.primary,.primary-action{background:linear-gradient(110deg,#ff7a35,#ff5425);color:#fff;border:1px solid #ff8b5266;box-shadow:0 7px 24px #ff652e25}button.primary:hover{background:#ff7c42}.danger{color:var(--danger)}:focus-visible{outline:2px solid #ff9d6e;outline-offset:4px}h1,h2,h3,p,figure{margin:0}h1{font-size:20px;letter-spacing:-.7px;line-height:1.4}h2{font-size:22px;letter-spacing:-.6px;line-height:1.3}h3{font-size:16px}small,.subtle,.profile-info{color:var(--muted)}.subtle,.profile-info{font-size:12px}main{max-width:1080px;margin:auto;padding:0 24px calc(116px + env(safe-area-inset-bottom))}header{display:flex;align-items:center;justify-content:space-between;padding:26px 0 22px;gap:12px}.wordmark{display:flex;align-items:center;gap:10px}.brand-mark{color:#fff;position:relative}.brand-mark .icon{width:36px;height:36px}.brand-mark:after{content:'✦';position:absolute;right:-3px;top:-8px;color:var(--primary);font-size:17px}#page-kicker{color:var(--muted);font-size:11px;letter-spacing:.04em}.header-profile{border-radius:50%;padding:9px;width:42px;height:42px;display:grid;place-items:center}.icon{width:23px;height:23px;display:inline-block;vertical-align:middle;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}.sprite{position:absolute;width:0;height:0;overflow:hidden}.row{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.actions{justify-content:space-between}.panel{margin-bottom:18px}.glass,.editor-card,.sheet,.profile-details{background:linear-gradient(140deg,#ffffff0d,#ffffff04);border:1px solid var(--line);border-radius:var(--radius);box-shadow:inset 0 1px #ffffff08,var(--shadow);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}.eyebrow,.section-kicker,.step{font-size:11px;letter-spacing:.12em;color:var(--primary);font-weight:750}.section-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:22px 0 14px}.section-heading h2{font-size:20px}.section-heading small{font-size:12px}.hero{position:relative;overflow:hidden;isolation:isolate;border-radius:28px;background:radial-gradient(ellipse at 75% 80%,#a7552d48,transparent 70%),linear-gradient(145deg,#22232a,#18191c);border:1px solid var(--line)}.intro-hero{min-height:260px;display:flex;align-items:center;padding:26px}.hero-copy{position:relative;z-index:2;max-width:58%}.hero-copy h2{font-size:clamp(28px,5.8vw,46px);line-height:1.24;letter-spacing:-1px;margin:10px 0 13px}.hero-copy em{font-style:normal;color:var(--primary)}.hero-copy p{font-size:12px;line-height:1.8;color:#bdbbbd;max-width:175px}.hero-art{position:absolute;inset:0 0 0 44%;z-index:-1;overflow:hidden;opacity:.9;mask-image:linear-gradient(90deg,transparent,#000 27%);-webkit-mask-image:linear-gradient(90deg,transparent,#000 27%)}.hero-art img{position:absolute;width:265%;max-width:none;left:-130%;top:-40%;height:auto}.intro-hero:after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(0deg,#17181cee,transparent 28%)}.reference-label{position:absolute;bottom:12px;right:16px;z-index:3;font-size:9px;letter-spacing:.08em;color:#b2a6a0}.journey{display:grid;grid-template-columns:repeat(3,1fr);padding:12px 8px;margin:12px 0 0;border-radius:20px}.journey>div{text-align:center;color:var(--muted);font-size:10px}.journey .icon{display:block;margin:0 auto 7px;color:#e3dedb}.journey>div:first-child .icon{color:var(--primary)}.journey>div+div{border-left:1px solid var(--line)}.setup-form{padding:20px}.setup-form h2{margin:8px 0 18px}.choice-grid{display:grid;grid-template-columns:1fr 1fr;background:#121316;border-radius:14px;padding:4px;gap:4px;margin:12px 0 18px}.choice-grid button{border:0;background:transparent;color:var(--muted);min-height:42px;border-radius:11px}.choice-grid button[aria-pressed=true]{background:#39302b;color:#ff9d6b}.choice{display:grid;gap:13px}.choice strong{font-size:16px}.choice span{font-size:12px;color:var(--muted)}label{display:grid;gap:7px;font-size:12px;color:#d7d5d4;min-width:0}input,select{width:100%;min-width:0}select{background-color:#26262a}input[type=file]{font-size:11px;padding:10px;background:#141518}input[type=file]::file-selector-button{background:#3a2c25;color:#ffaf80;border:0;border-radius:8px;padding:7px 9px;margin-right:8px}input[type=range]{accent-color:var(--primary)}.avatar-guides{display:grid;grid-template-columns:1fr 1fr;gap:12px}.avatar-guides figure:only-child{grid-column:span 2}.avatar-guides img,.avatar-guides canvas{display:block;width:100%;height:145px;object-fit:contain;border-radius:14px;background:#17181c;margin-top:7px}.avatar-guides figcaption{color:var(--muted);font-size:11px}.crop-controls{display:grid;gap:8px}#portrait-generate{width:100%;margin-top:4px}#draft-avatar{width:100%;height:420px;object-fit:contain;border-radius:18px;background:#151619;margin:16px 0}#confirm-hint{font-size:12px;color:var(--muted)}#setup-preview .row button:first-child{flex:1}#cancel-setup{margin-top:18px;width:100%;background:none;border:0;color:var(--muted)}.page-title{margin:4px 0 20px}.page-title h2{font-size:28px;margin-top:7px}.page-title p:last-child{margin-top:7px;color:var(--muted);font-size:12px}.mirror-head{display:flex;align-items:center;justify-content:space-between;margin:4px 0 14px}.mirror-head h2{font-size:24px;margin-top:4px}.avatar-switch{border-radius:30px;min-height:38px;font-size:11px;display:flex;align-items:center;gap:6px}.avatar-switch .icon{width:16px;height:16px}.fitting-room{position:relative;min-width:0}.equip-stage{position:relative;display:block;border-radius:26px;border:1px solid var(--line);overflow:hidden;background:radial-gradient(ellipse at 50% 40%,#55483f,#1b1c20 76%)}.stage{height:clamp(420px,65dvh,680px);position:relative;display:flex;justify-content:center;align-items:center;overflow:hidden}.stage:after{content:'';position:absolute;inset:48px 64px 28px;border-radius:34px;border:1px solid #ff80422a;pointer-events:none}.stage img{width:100%;height:100%;object-fit:contain;cursor:zoom-in}.stage[aria-busy=true] img{opacity:.5}.badge{position:absolute;left:15px;top:14px;color:#e3ded9;font-size:10px;background:#17181cd9;border:1px solid #ffffff18;border-radius:30px;padding:6px 10px;pointer-events:none}.badge:before{content:'';width:5px;height:5px;display:inline-block;border-radius:50%;background:var(--primary);margin-right:5px}.stage-progress{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);padding:10px 16px;border-radius:20px;background:#3b2a21ef;font-size:12px;white-space:nowrap}.stage-progress:before{content:'✦';color:var(--primary);margin-right:7px}.equip-column{position:absolute;z-index:1;top:50%;transform:translateY(-50%);display:grid;gap:10px;grid-template-rows:repeat(3,59px);width:49px}#equip-left{left:10px}#equip-right{right:10px}.equip-column button{padding:5px 2px;border-radius:15px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;background:#232326d9;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font-size:9px;min-height:0;box-shadow:0 4px 14px #0002}.equip-column strong{font-weight:500}.equip-column button[aria-pressed=true]{border-color:#ff824f88;background:#482b21d9}.equip-column img{width:25px;height:25px;object-fit:cover;border-radius:6px}.equip-column .icon{width:22px;height:22px;color:#c7c0bc}.equip-column button[aria-pressed=true] .icon{color:var(--primary)}.swatch{font-size:20px;line-height:1}.editor-card{margin-top:14px;padding:19px}.editor-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}.editor-head h2{font-size:17px}#selection-count{font-size:10px;color:var(--primary);padding:4px 8px;border-radius:20px;background:var(--primary-soft)}.upload-steps{display:flex;align-items:center;gap:10px}.upload-steps label{display:inline-flex;flex-direction:row;align-items:center;font-size:11px;min-height:36px;padding:6px 0;color:#e8c0aa;cursor:pointer}.upload-steps input{position:absolute;width:1px;height:1px;opacity:0;padding:0;min-height:0}#selected-top{font-size:11px;margin:3px 0 14px}.editor-card .actions{display:grid;grid-template-columns:1.2fr 1fr;gap:9px}.editor-card .actions button{font-size:12px;min-height:47px}.result-tools{margin-top:10px}.result-tools summary{font-size:11px;color:var(--muted);cursor:pointer;padding:7px 0}.result-actions button{font-size:11px}.editor-card>#preview-note{margin-top:10px;font-size:11px}#save-result{width:100%;margin-top:12px}.closet-hero{padding:23px;min-height:204px;background:radial-gradient(ellipse at right,#1d4055,#17202b 65%)}.closet-hero .hero-copy h2{font-size:25px}.closet-hero .hero-art{inset:0 0 0 48%}.closet-hero .hero-art img{width:335%;left:-142%;top:-50%}.closet-hero:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#16212ee6,transparent 55%);z-index:0;pointer-events:none}.closet-hero .hero-copy{z-index:1}.text-link{display:inline-flex;align-items:center;gap:9px;color:#ff9661;font-size:11px;border:0;background:none;padding:9px 0;min-height:36px}.closet-stats{display:grid;grid-template-columns:repeat(3,1fr);padding:16px 8px;margin-top:14px;border-radius:20px}.closet-stats div{text-align:center}.closet-stats div+div{border-left:1px solid var(--line)}.closet-stats strong{font-size:23px;line-height:1.2;font-weight:650}.closet-stats small{display:block;font-size:10px;margin-top:5px}.closet-add{margin:14px 0}.closet-add summary{display:flex;justify-content:center;gap:8px;list-style:none;cursor:pointer;color:#fff;padding:12px;border-radius:15px;background:linear-gradient(110deg,#ff7939,#ff572b);font-weight:650;font-size:13px;box-shadow:0 6px 18px #ff652e20}.closet-add summary::-webkit-details-marker{display:none}#add{display:grid;grid-template-columns:1fr 1fr;gap:12px;background:#1d1e22;border:1px solid var(--line);padding:17px;border-radius:18px;margin-top:12px}#add button{grid-column:span 2}.filters{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:7px;padding:4px 0 14px;scrollbar-width:none}.filters::-webkit-scrollbar{display:none}.filters button{flex:none;border-radius:30px;padding:7px 13px;font-size:11px;min-height:35px;border-color:transparent;color:var(--muted);background:none}.filters button[aria-pressed=true]{background:var(--primary);color:white}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{position:relative;min-width:0;overflow:hidden;border-radius:20px;background:#232427;border:1px solid var(--line)}.card-photo{position:relative;aspect-ratio:1/1.08;overflow:hidden;display:grid;place-items:center;background:radial-gradient(ellipse at 60% 35%,#4b463f,#2d2b2a)}.card-photo img{width:100%;height:100%;object-fit:contain}.card-photo>.icon{width:62px;height:62px;color:#9f9385;stroke-width:1}.card-info{padding:11px}.card-info strong{display:block;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.card-info small{display:block;font-size:10px;margin:3px 0 10px}.card-info button{width:100%;font-size:10px;min-height:34px;padding:6px;background:#ffffff07}.card-menu{position:absolute;right:7px;top:7px;z-index:1;width:30px;min-height:30px;padding:0;border-radius:50%;background:#18191bbf;color:#e1d9d3;font-size:17px}.empty-state{grid-column:1/-1;text-align:center;border:1px dashed #ffffff20;border-radius:22px;padding:32px 16px;color:var(--muted)}.empty-state .icon{width:36px;height:36px;margin-bottom:10px;color:#ad795b}.empty-state h3{color:var(--ink);font-size:14px;margin-bottom:5px}.empty-state p{font-size:11px;max-width:240px;margin:auto}.empty-state button{margin-top:16px;font-size:12px}.profile-stage{position:relative;border-radius:26px;overflow:hidden;background:radial-gradient(ellipse at center,#4d3b31,#1a1b1f);border:1px solid var(--line)}#profile-avatar{display:block;width:100%;height:clamp(340px,51dvh,560px);object-fit:contain}.profile-stage .badge{left:14px;top:14px}.profile-details{padding:20px;margin-top:14px}.profile-details h3{margin-bottom:7px}.profile-details .row{margin-top:17px}.profile-details .row button{flex:1;font-size:12px}.privacy-note{display:flex;gap:11px;padding:18px 4px;color:var(--muted);font-size:11px;align-items:flex-start}.privacy-note .icon{width:18px;height:18px;color:#c28c6b;margin-top:2px}.look-composer{padding:20px}.look-composer>label{margin:16px 0}#slots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0}#slots select{font-size:11px;min-height:39px;padding:8px}#poster{display:block;width:min(100%,340px);height:auto;border-radius:17px;margin:20px auto;box-shadow:0 14px 34px #0005}.look-composer .actions button{flex:1;font-size:12px}.composer-options{border-top:1px solid var(--line);padding-top:13px;margin-top:14px}.composer-options summary{cursor:pointer;font-size:12px;color:var(--muted)}#saved{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.saved-card{overflow:hidden;min-width:0;border-radius:20px;border:1px solid var(--line);background:#222327}.saved-open{border:0;border-radius:0;padding:0;width:100%;display:block;text-align:left;background:none}.saved-open img{width:100%;height:250px;object-fit:contain;display:block;background:#292a2d}.saved-open strong{padding:11px 12px 3px;display:block;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.saved-card-footer{padding:0 12px 10px;display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:10px}.saved-card-footer button{padding:3px 6px;min-height:30px;font-size:10px;border:0;color:var(--muted);background:none}.saved-placeholder{height:180px;display:grid;place-items:center;color:var(--primary)}.saved-placeholder .icon{width:50px;height:50px}.tabs{position:fixed;z-index:5;bottom:calc(12px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);display:grid;grid-template-columns:repeat(4,1fr);width:min(calc(100% - 32px),540px);background:linear-gradient(130deg,#303034eF,#202126f5);border:1px solid #ffffff19;border-radius:30px;padding:6px;box-shadow:0 10px 40px #0007,inset 0 1px #ffffff0c;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}.tabs button{border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:3px;border-radius:24px;min-height:62px;font-size:10px;padding:8px 5px;color:#bdbbbd}.tabs button .icon{width:24px;height:24px}.tabs button[aria-current=true]{color:#ff8a50;background:radial-gradient(ellipse at center,#ab4c263f,#ff642514);box-shadow:inset 0 0 20px #ff682e09}.sheet{position:fixed;inset:auto 0 0;width:min(100%,640px);max-height:82dvh;border-radius:28px 28px 0 0;margin:auto auto 0;padding:22px 20px calc(20px + env(safe-area-inset-bottom));overflow:auto;background:#222328}.sheet:before{content:'';display:block;width:34px;height:4px;background:#ffffff30;border-radius:6px;margin:-10px auto 20px}.sheet::backdrop{background:#07080bc9;backdrop-filter:blur(5px)}.sheet h2{font-size:19px}.sheet label{margin:20px 0}.sheet .section-kicker{margin-bottom:12px}.sheet .card{padding:10px;display:grid;gap:7px;text-align:center;font-size:11px}.sheet .card img{width:100%;height:130px;object-fit:contain;border-radius:12px}#close-picker,#close-preview{min-height:36px;font-size:11px;border-radius:22px}#full-preview{width:min(96vw,800px);max-height:94dvh;background:#191a1d;border:1px solid var(--line);border-radius:22px;padding:14px}#full-preview img{display:block;width:100%;height:min(77dvh,900px);object-fit:contain;margin-top:10px}#full-preview::backdrop{background:#000d}#status{position:fixed;z-index:10;top:76px;left:50%;transform:translateX(-50%);width:min(calc(100% - 40px),600px);box-shadow:0 12px 35px #0008;backdrop-filter:blur(20px);font-size:12px;line-height:1.7;padding:12px 15px;margin-bottom:17px;border:1px solid #ff8c4d33;background:#40291f8c;color:#ffbf99;border-radius:14px}#status:empty{display:none}.split-layout{display:grid;gap:16px}.divider-title{display:flex;align-items:center;gap:8px}.divider-title .icon{width:20px;color:var(--primary)}@media(min-width:760px){main{padding-inline:36px}header{padding:30px 0}.intro-hero{min-height:340px}.intro-hero .hero-art img{width:160%;left:-40%;top:-39%}.hero-copy{max-width:55%}.hero-copy p{max-width:280px;font-size:14px}.split-layout{grid-template-columns:1.05fr 1fr;align-items:start}.setup-form{padding:27px}.journey{margin-top:20px}.mirror-layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:24px;align-items:start}.editor-card{margin:0}.stage{height:650px}.equip-column{width:57px;grid-template-rows:repeat(3,67px)}.closet-hero{min-height:240px}.closet-hero .hero-art img{width:335%;left:-142%;top:-158%}.closet-hero .hero-copy h2{font-size:34px}#closet{grid-template-columns:repeat(4,minmax(0,1fr))}.closet-stats{max-width:100%}#saved{grid-template-columns:repeat(3,minmax(0,1fr))}.profile-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px}.profile-details{margin-top:0}#profile-avatar{height:580px}.look-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}.look-composer{padding:25px}.page-title{margin-bottom:24px}}@media(max-width:374px){main{padding-inline:16px}.hero-copy h2{font-size:27px}.intro-hero{padding:20px;min-height:285px}.hero-copy p{font-size:11px}.setup-form{padding:17px}.editor-card{padding:16px}.stage{height:430px}.tabs{width:calc(100% - 24px)}}@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.setup-track{display:flex;list-style:none;gap:5px;padding:0;margin:0 0 10px;counter-reset:step}.setup-track li{flex:1;text-align:center;color:var(--muted);font-size:10px;border-top:2px solid #ffffff18;padding-top:8px}.setup-track li[aria-current=step]{color:var(--primary);border-color:var(--primary)}.setup-track li.done{border-color:#ff874d88;color:#e7ba9f}[data-portrait-step]{display:grid;gap:14px}[data-portrait-step]>h3{font-size:17px}.flow-next{width:100%}.flow-actions{display:grid;grid-template-columns:auto 1fr;gap:9px;margin-top:5px}.flow-actions button{font-size:12px}.appearance-options{border:0;padding:0;margin:0;display:grid;gap:10px}.appearance-options legend{margin-bottom:10px}.appearance-options label{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:15px;padding:15px;background:#ffffff03;cursor:pointer}.appearance-options label:has(input:checked){border-color:#ff884b99;background:var(--primary-soft)}.appearance-options input{width:18px;height:18px;min-height:0;accent-color:var(--primary);flex:none}.appearance-options strong{font-size:13px}.appearance-options small{display:block;margin-top:3px;font-size:11px}.body-pose-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.body-pose-fields select{font-size:11px}.pose-preview{background:#17181c;border:1px solid var(--line);border-radius:18px;padding:14px;text-align:center}.pose-preview img{height:210px;width:100%;object-fit:contain;border-radius:12px}.pose-preview figcaption{font-size:10px;color:var(--muted);margin-top:8px}#portrait-crop{display:block;width:100%;height:200px;object-fit:contain;background:#17181c;border-radius:16px}.settings-summary{font-size:11px;color:#ffc29e;background:var(--primary-soft);border-radius:12px;padding:10px 12px}.onboarding[data-avatar-step]:not([data-avatar-step="1"]) .split-layout>div:first-child{display:none}.onboarding[data-avatar-step]:not([data-avatar-step="1"]) .split-layout{grid-template-columns:minmax(0,1fr);max-width:650px;margin:auto}.profile-fields{display:grid;gap:14px}.profile-fields select{font-size:12px}.profile-fields details{border:1px solid var(--line);border-radius:14px;padding:13px}.profile-fields details summary{cursor:pointer;color:#d1c8c2;font-size:12px}.regional-fields{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:15px}.profile-review{display:flex;gap:14px;align-items:center;background:#ffffff05;border-radius:16px;padding:13px}.profile-review img{width:78px;height:104px;object-fit:contain;background:#141518;border-radius:12px}.profile-review p{font-size:12px;color:#dfc6b7;line-height:1.9}.review-settings{margin:0;display:grid;grid-template-columns:1fr 1.4fr;gap:0;font-size:12px}.review-settings dt,.review-settings dd{margin:0;padding:10px 0;border-bottom:1px solid var(--line)}.review-settings dt{color:var(--muted)}.review-settings dd{text-align:right}#customize-full{flex-basis:100%;width:100%;color:#ffb78d}#profile-fields .subtle{margin:0}.quota-card{margin:0 0 15px;border:1px solid #ff8d4e22;background:#ff793d09;border-radius:14px;padding:12px;font-size:11px;color:#d4bfaf}.quota-card button{font-size:11px;min-height:32px;padding:5px 10px;margin-top:7px}.account-card{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border:1px solid var(--line);border-radius:17px;margin-bottom:15px;font-size:12px}.account-card p{font-size:11px;color:var(--muted)}.account-card button{font-size:11px;min-height:36px}.avatar-library{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.avatar-library article{background:#232428;border:1px solid var(--line);border-radius:18px;overflow:hidden}.avatar-library img{display:block;width:100%;height:240px;object-fit:contain;background:#2c2c30}.avatar-library .library-info{padding:12px}.library-info strong{font-size:12px;display:block}.library-info small{display:block;color:var(--muted);font-size:10px;margin:4px 0 10px}.library-actions{display:flex;gap:6px;flex-wrap:wrap}.library-actions button{font-size:10px;min-height:34px;padding:6px 8px}.library-actions button:first-child{flex:1}.result-download{width:100%;margin-top:10px;color:#ffc19b!important}#download-avatar-draft{flex-basis:100%;width:100%}.auth-form{display:grid;gap:15px}.auth-form h2{font-size:22px}.phone-row{display:flex;gap:8px;align-items:center}.phone-row span{padding:9px 12px;background:#ffffff07;border-radius:12px}.code-row{display:grid;grid-template-columns:1fr auto;gap:8px}.code-row button{font-size:11px}.consent{display:flex;align-items:flex-start;gap:8px;font-size:11px;color:var(--muted)}.consent input{width:17px;height:17px;flex:none;accent-color:var(--primary);margin-top:3px}.export-dialog{width:min(94vw,560px);max-height:94dvh;overflow:auto;border-radius:24px;border:1px solid var(--line);background:#202126;color:var(--ink);padding:16px}.export-dialog::backdrop{background:#000b;backdrop-filter:blur(5px)}.export-dialog img{display:block;max-width:100%;max-height:64dvh;width:auto;height:auto;object-fit:contain;margin:12px auto;border-radius:12px}.export-dialog .row button{flex:1;font-size:12px}.export-dialog p{font-size:11px;color:var(--muted);margin:10px 0}.dialog-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.dialog-head h2{font-size:18px}.dialog-head button{font-size:11px;min-height:34px}.auth-message{font-size:12px;color:#ffb28b;min-height:20px}@media(min-width:760px){.avatar-library{grid-template-columns:repeat(3,minmax(0,1fr))}.avatar-library img{height:290px}}.profile-empty{min-height:310px;display:grid;align-content:center;justify-items:center;gap:12px;padding:26px;text-align:center}.profile-empty .icon{width:54px;height:54px;color:#d9986d}.profile-empty p{color:var(--muted);font-size:12px}.profile-empty button{font-size:12px}.avatar-library article[data-active=true]{border-color:#ff874e;box-shadow:0 0 0 1px #ff874e33}.library-info small{overflow-wrap:anywhere}
+/* Desktop workspace: keep the existing compact layout below 1024px. */
+@media(min-width:1024px){
+ body{background:radial-gradient(ellipse at 85% 0%,#39241d55,transparent 44%),var(--bg)}
+ main{max-width:1720px;margin-left:192px;margin-right:auto;padding:0 32px 40px}
+ header{padding:20px 0;height:88px;border-bottom:1px solid var(--line);margin-bottom:24px}
+ h1{font-size:23px}#page-kicker{font-size:12px}
+ .tabs{left:16px;top:24px;bottom:24px;transform:none;width:160px;grid-template-columns:1fr;grid-auto-rows:52px;align-content:start;gap:10px;padding:20px 12px;border-radius:22px;background:#1c1d22;box-shadow:none}
+ .tabs:before{content:'TRY-ON';font-size:18px;letter-spacing:2px;font-weight:750;color:#fff;padding:10px 12px 24px;align-self:center}
+ .tabs button{flex-direction:row;justify-content:flex-start;gap:14px;font-size:14px;min-height:52px;padding:12px 16px;border-radius:12px}
+ .tabs button .icon{width:22px;height:22px}
+ .mirror-head,.page-title{margin:0 0 20px}.mirror-head h2,.page-title h2{font-size:28px}
+ .mirror-layout{grid-template-columns:minmax(0,1fr) minmax(300px,360px);gap:24px}
+ .fitting-room{position:sticky;top:24px}
+ .stage{height:clamp(430px,calc(100dvh - 208px),860px)}
+ .stage img{padding:16px 90px}.stage:after{inset:24px 88px}
+ .equip-column{width:68px;gap:14px;grid-template-rows:repeat(3,80px)}
+ #equip-left{left:16px}#equip-right{right:16px}
+ .equip-column button{font-size:12px;gap:7px}.equip-column img{width:36px;height:36px}.equip-column .icon{width:28px;height:28px}
+ .editor-card{margin-top:0;padding:24px;position:sticky;top:24px}.editor-head{margin-bottom:20px}.editor-head h2{font-size:19px}
+ #selected-top{font-size:13px;margin:12px 0 20px}.upload-steps label{font-size:13px}
+ .editor-card .actions{grid-template-columns:1fr}.editor-card .actions button{font-size:14px;min-height:48px}
+ .editor-card>#preview-note,.privacy-note{font-size:12px;line-height:1.8}
+ .profile-layout{grid-template-columns:minmax(0,1fr) minmax(300px,420px);align-items:start}
+ #profile-avatar{height:clamp(420px,calc(100dvh - 250px),760px)}
+ .profile-details{padding:26px}.profile-details .row{margin-top:20px}.profile-info{font-size:13px}
+ .avatar-library{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px}.avatar-library img{height:240px}
+ [data-page=closet]{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:0 24px}
+ .closet-hero{min-height:142px;padding:22px 28px}.closet-hero .hero-copy{max-width:80%}.closet-hero .hero-copy h2{font-size:25px;margin:4px 0}.closet-hero .hero-copy h2 br{display:none}.closet-hero .hero-copy p{max-width:none}
+ .closet-stats{margin:0;align-items:center;padding:20px 8px}
+ .closet-add{grid-column:1/-1;margin:20px 0 4px}.closet-add summary{width:190px}
+ #add{grid-template-columns:1.5fr 1.5fr 1fr 1fr auto;align-items:end}#add button{grid-column:auto}
+ #closet-heading,#filters,#closet{grid-column:1/-1}#closet-heading{margin:20px 0 12px}
+ #closet{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:18px}
+ .filters button{font-size:13px;padding:8px 18px;min-height:40px}
+ .look-layout{grid-template-columns:minmax(340px,.85fr) minmax(0,1.15fr);gap:28px}
+ #poster{width:min(100%,380px)}
+ .sheet{inset:0;margin:auto;width:min(800px,calc(100vw - 80px));max-height:85dvh;height:fit-content;border-radius:24px;padding:28px}
+ .sheet:before{display:none}.sheet .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .split-layout{grid-template-columns:minmax(300px,.85fr) minmax(0,1.15fr);gap:32px}.intro-hero{min-height:360px}
+ .onboarding[data-avatar-step]:not([data-avatar-step="1"]) .split-layout{max-width:960px}
+}
+@media(min-width:1600px){main{padding-inline:48px}.mirror-layout{grid-template-columns:minmax(0,1fr) 400px}.stage{height:clamp(600px,calc(100dvh - 208px),940px)}#closet{grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}}
+</style></head><body><svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><symbol id="i-hanger" viewBox="0 0 24 24"><path d="M9 6a3 3 0 1 1 5 2.2L12 10v2l9 5a2 2 0 0 1-1 4H4a2 2 0 0 1-1-4l9-5"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 22v-3a8 8 0 0 1 16 0v3Z"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></symbol><symbol id="i-shirt" viewBox="0 0 24 24"><path d="m8 3-6 4 3 5 3-2v11h8V10l3 2 3-5-6-4c-1 3-7 3-8 0Z"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 6-10 6L2 8Z"/><path d="m2 12 10 6 10-6M2 16l10 6 10-6"/></symbol><symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3c0 6-3 9-9 9 6 0 9 3 9 9 0-6 3-9 9-9-6 0-9-3-9-9ZM20 1v4M18 3h4"/></symbol><symbol id="i-camera" viewBox="0 0 24 24"><path d="M3 6h4l2-3h6l2 3h4v15H3Z"/><circle cx="12" cy="13" r="4"/></symbol><symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="2"/><path d="m3 17 6-6 4 4 3-3 5 6"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L20 5"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 2 9 4v6c0 5-9 10-9 10S3 17 3 12V6Z"/><path d="m8 12 3 3 5-6"/></symbol><symbol id="i-bag" viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="15" rx="3"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></symbol><symbol id="i-pants" viewBox="0 0 24 24"><path d="M6 3h12l2 19h-6l-2-13-2 13H4Z"/><path d="M6 6h12M12 3v6"/></symbol><symbol id="i-shoe" viewBox="0 0 24 24"><path d="m5 4 5 7 7 3 4 1v6H3l-1-8 3-9Z"/><path d="M3 17h18M10 11l-2 3m6-1-2 3"/></symbol><symbol id="i-hat" viewBox="0 0 24 24"><path d="M6 14V9a6 6 0 0 1 12 0v5M2 17c0-4 20-4 20 0s-20 4-20 0Z"/></symbol><symbol id="i-glasses" viewBox="0 0 24 24"><circle cx="6" cy="13" r="4"/><circle cx="18" cy="13" r="4"/><path d="M10 12h4M2 13V6m20 7V6"/></symbol><symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M6 3h12v19l-6-4-6 4Z"/></symbol><symbol id="i-share" viewBox="0 0 24 24"><path d="M12 15V2m-4 4 4-4 4 4M7 10H3v12h18V10h-4"/></symbol></svg><main>
+<header><div class="wordmark"><div class="brand-mark"><svg class="icon" aria-hidden="true"><use href="#i-hanger"/></svg></div><div><h1>AI 私人衣橱</h1><p id="page-kicker">你的专属智能穿搭助手</p></div></div><button class="header-profile" id="header-profile" aria-label="管理我的分身"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg></button></header>
+<p id="status" role="status" aria-live="polite"></p>
+<section class="panel onboarding" data-page="onboard" hidden><div class="split-layout"><div><div class="hero intro-hero"><div class="hero-copy"><p class="eyebrow">从你开始 · 为你而搭</p><h2>你的分身<br>你的<em>新风格</em></h2><p>上传照片，建立数字分身。<br>让每一件心动单品，先穿在你身上。</p></div><div class="hero-art"><img src="assets/avatar-reference.jpg" alt="时尚人物参考视觉"></div><span class="reference-label">风格参考 · 非用户分身</span></div><div class="journey glass"><div><svg class="icon" aria-hidden="true"><use href="#i-camera"/></svg>上传照片</div><div><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg>建立分身</div><div><svg class="icon" aria-hidden="true"><use href="#i-hanger"/></svg>开始试穿</div></div></div>
+<div class="setup-form glass"><p class="step" id="setup-step">01 / 创建分身</p><h2 id="setup-title">创建你的数字分身</h2><div id="avatar-quota" class="quota-card"></div><label class="model-choice">生图模型<select class="generation-model"><option value="seedream">Seedream 5.0 Flash</option><option value="fal">Nano Banana 2 · fal.ai</option></select></label><ol class="setup-track" id="avatar-flow-track" aria-label="分身创建步骤" hidden><li data-flow-step="1">照片</li><li data-flow-step="2">外观</li><li data-flow-step="3">身形</li><li data-flow-step="4">确认</li><li data-flow-step="5">预览</li></ol><div id="setup-input"><div class="choice-grid" aria-label="照片方式"><button type="button" id="choose-full" aria-controls="full-choice">有全身照</button><button type="button" id="choose-face" aria-controls="portrait-form">只有头像</button></div>
+<label id="full-choice" class="choice"><strong>用一张照片，开启试衣间</strong><span>选择脸部清晰、双脚完整入镜的正面全身照。</span><input id="avatar-file" type="file" accept="image/*"></label>
+<form class="choice" id="portrait-form">
+
+<div data-portrait-step="1"><h3>先选一张清晰头像</h3><p class="subtle">正脸、光线均匀，避免遮挡。上传后可调整裁切范围。</p><label>头像照片<input id="portrait-file" type="file" accept="image/*" required></label><figure id="crop-panel" hidden><canvas id="portrait-crop" width="512" height="512" aria-label="头像裁切预览"></canvas></figure><div class="crop-controls" id="crop-controls" hidden><label>缩放<input id="crop-zoom" type="range" min="1" max="3" step=".05" value="1"></label><label>左右移动<input id="crop-x" type="range" min="0" max="100" value="50"></label><label>上下移动<input id="crop-y" type="range" min="0" max="100" value="50"></label></div><button type="button" class="primary flow-next" id="portrait-next-photo" disabled>下一步 · 选择外观</button></div>
+<div data-portrait-step="2" hidden><h3>希望分身呈现什么外观？</h3><p class="subtle">这是生成偏好，不会限制衣物类别或穿搭风格。</p><fieldset class="appearance-options"><legend class="section-kicker">分身外观</legend><label><input type="radio" name="appearance" value="preserve" checked><span><strong>保持照片原貌</strong><small>以参考照片中的人物外观为准</small></span></label><label><input type="radio" name="appearance" value="female"><span><strong>女性外观</strong><small>保留面部特征，呈现女性外观</small></span></label><label><input type="radio" name="appearance" value="male"><span><strong>男性外观</strong><small>保留面部特征，呈现男性外观</small></span></label></fieldset><div class="flow-actions"><button type="button" id="portrait-back-photo">上一步</button><button type="button" class="primary" id="portrait-next-appearance">下一步 · 身形与站姿</button></div></div>
+<div data-portrait-step="3" hidden><h3>描述你的身形</h3><p id="profile-source-hint" class="subtle">选择接近自己的整体体型，再按需补充局部比例。</p><div id="profile-fields" class="profile-fields"><p class="subtle">正在加载身形选项…</p></div><button type="button" id="reload-profile-config" class="text-link" hidden>重新加载身形选项</button><div class="body-pose-fields"><label>身高 · 选填（cm）<input id="portrait-height" type="number" min="80" max="250" step="0.1" inputmode="decimal" placeholder="例如 165"></label><label>站姿<select id="portrait-pose"><option value="front">正面自然站立</option><option value="angle">轻微侧身</option></select></label></div><p id="portrait-summary" class="settings-summary"></p><div class="flow-actions"><button type="button" id="portrait-back-appearance">上一步</button><button type="button" class="primary" id="portrait-next-body" disabled>下一步 · 确认描述</button></div><p class="subtle">这些选择是生成目标，AI 可能未完全遵循，请在生成后检查。</p></div>
+<div data-portrait-step="4" hidden><h3>确认这次生成描述</h3><div class="profile-review"><img id="review-photo" alt="本次生成使用的人物参考"><p id="review-description"></p></div><dl id="review-settings" class="review-settings"></dl><p class="subtle">照片会发送至所选模型服务商完成生成，结果保存到分身库。</p><div class="flow-actions"><button type="button" id="portrait-back-body">返回调整</button><button class="primary" id="portrait-generate">确认并生成分身</button></div></div>
+</form></div>
+<div id="setup-preview" hidden><p id="confirm-hint"></p><img id="draft-avatar" alt="待确认的全身分身"><div class="row"><button id="confirm-avatar" class="primary">确认分身并开始试穿</button><button id="reselect-avatar">调整设置</button><button type="button" id="customize-full" hidden>设置身形后生成</button><button type="button" id="download-avatar-draft" hidden>下载 / 分享分身图片</button></div></div><button id="cancel-setup" hidden>返回当前分身</button></div></div></section>
+<section class="panel" data-page="mirror" hidden><div class="mirror-head"><div><p class="eyebrow">VIRTUAL FITTING ROOM</p><h2>先试穿，再心动</h2></div><button class="avatar-switch" id="mirror-profile"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg>我的分身</button></div><div class="mirror-layout"><div class="fitting-room"><div class="equip-stage"><div id="equip-left" class="equip-column" aria-label="左侧服饰栏"></div><div class="stage"><img id="avatar" src="avatar.svg" alt="全身数字分身"><span class="badge" id="avatar-label">我的分身</span><span id="tryon-progress" class="stage-progress" hidden>正在为你生成试穿图…</span></div><div id="equip-right" class="equip-column" aria-label="右侧服饰栏"></div></div></div><div class="editor-card"><div class="editor-head"><h2><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg> 当前搭配</h2><span id="selection-count"></span></div><div class="upload-steps"><label><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg> 上传上衣照片<input id="quick-top" type="file" accept="image/*"></label></div><p id="selected-top" class="subtle"></p><label class="model-choice">生图模型<select class="generation-model"><option value="seedream">Seedream 5.0 Flash</option><option value="fal">Nano Banana 2 · fal.ai</option></select></label><div class="row actions"><button class="primary" id="generate">生成试穿图</button><button id="to-look">制作 OOTD</button></div><p class="subtle" id="preview-note"></p><button id="save-result" class="primary" hidden>存为搭配</button><button id="save-preview" class="result-download" hidden>下载 / 分享试穿图</button><details id="result-tools" class="result-tools" hidden><summary>试穿图操作</summary><div class="row result-actions"><button id="original" hidden>查看人物底图</button><button id="delete-preview" hidden>删除试穿图</button></div></details><div class="privacy-note"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg><span>点选人物两侧的服饰栏，自由组合你的衣物。AI 试穿效果仅供搭配参考。</span></div></div></div></section>
+<section class="panel" data-page="me" hidden><div class="page-title"><p class="eyebrow">MY DIGITAL SELF</p><h2>我的数字分身</h2><p>每一种风格，都从你开始。</p></div><div id="account-card" class="account-card"></div><div class="profile-layout"><div class="profile-stage"><div id="profile-empty" class="profile-empty" hidden><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg><h3>还没有选择分身</h3><p>上传全身照，或直接创建 AI 分身。</p><button id="create-first-avatar" class="primary">建立我的分身</button></div><img id="profile-avatar" alt="当前确认的分身"><span class="badge">我的分身</span></div><div><div class="profile-details"><h3>专属于你的试衣主角</h3><p class="profile-info">使用清晰的全身分身，获得更完整的试穿效果。</p><div class="row"><button id="change-avatar">更换分身</button><button id="profile-tryon" class="primary">去试穿 →</button><button id="download-avatar">下载 / 分享分身</button></div><button id="clear-avatar" class="text-link danger">移除分身照片</button></div><div class="privacy-note"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><span>分身库与当前浏览器身份关联，衣橱保存在当前设备；清理浏览器数据或更换设备可能无法恢复。生图时参考照片会发送至 所选模型服务商。</span></div></div></div></section>
+<section class="panel" data-page="me" hidden><div class="section-heading"><h2>我的分身库</h2><span id="avatar-library-count" class="subtle"></span></div><div id="avatar-library" class="avatar-library"></div></section>
+<section class="panel" data-page="closet" hidden><div class="hero closet-hero"><div class="hero-copy"><p class="eyebrow">MY DIGITAL WARDROBE</p><h2>把喜欢的衣服<br>装进<em>数字衣橱</em></h2><p>已有的、心动的，都能搭在一起。</p></div><div class="hero-art"><img src="assets/closet-reference.jpg" alt="数字衣橱风格参考"></div><span class="reference-label">风格参考</span></div><div class="closet-stats glass"><div><strong id="stat-clothes">0</strong><small>我的衣物</small></div><div><strong id="stat-categories">0</strong><small>衣物类别</small></div><div><strong id="stat-looks">0</strong><small>已存搭配</small></div></div><details class="closet-add"><summary><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg> 添加我的衣服</summary><form id="add"><label>衣物照片<input id="file" type="file" accept="image/*" required></label><label>衣物名称<input id="name" required maxlength="24" placeholder="例如 米色针织衫"></label><label>分类<select id="category"></select></label><label>来源<select id="source"><option>已有</option><option>想买</option></select></label><button class="primary">加入衣橱</button></form></details><div class="section-heading" id="closet-heading"><h2>我的单品</h2><span id="closet-count" class="subtle"></span></div><div id="filters" class="filters" aria-label="按类别筛选"></div><div id="closet" class="grid"></div></section>
+<section class="panel" data-page="looks" hidden><div class="page-title"><p class="eyebrow">OUTFIT OF THE DAY</p><h2>把灵感，穿成日常</h2><p>收藏喜欢的搭配，记录每一天的风格。</p></div><div class="look-layout"><div class="look-composer glass"><div class="divider-title"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg><h3>制作我的 OOTD</h3></div><label>搭配名称<input id="title" maxlength="24" value="今日穿搭" placeholder="为今天的搭配起个名字"></label><details class="composer-options"><summary>调整搭配单品</summary><div id="slots" class="grid"></div></details><canvas id="poster" width="900" height="1200" aria-label="OOTD 海报预览"></canvas><div class="row actions"><button id="save">保存搭配</button><button id="download" class="primary">保存 OOTD 图片</button></div></div><div><div class="section-heading"><h2>搭配收藏</h2><span id="saved-count" class="subtle"></span></div><div id="saved"></div></div></div></section>
+</main><nav class="tabs" aria-label="主导航"><button data-tab="me"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg>分身</button><button data-tab="closet"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg>衣橱</button><button data-tab="mirror"><svg class="icon" aria-hidden="true"><use href="#i-shirt"/></svg>试穿</button><button data-tab="looks"><svg class="icon" aria-hidden="true"><use href="#i-hanger"/></svg>搭配</button></nav>
+<dialog class="sheet" id="picker" aria-labelledby="picker-title"><div class="row actions"><h2 id="picker-title"></h2><button id="close-picker">关闭</button></div><label>上传新的单品<input id="picker-upload" type="file" accept="image/*"></label><p class="section-kicker">从我的衣橱中选择</p><div id="picker-items" class="grid"></div></dialog><dialog id="full-preview" aria-label="全屏预览"><button id="close-preview">关闭预览</button><img id="full-preview-image" alt="试衣大图"></dialog><dialog class="export-dialog" id="export-dialog" aria-labelledby="export-title"><div class="dialog-head"><h2 id="export-title">保存图片</h2><button id="close-export">关闭</button></div><img id="export-image" alt="带水印的待保存图片"><p>可使用系统分享菜单存储图像，或长按图片保存。</p><div class="row"><button id="download-export" class="primary">下载图片</button><button id="share-export">分享 / 存储图像</button></div><p id="export-status" role="status"></p></dialog>
+<script>
+const el=id=>document.getElementById(id);
+const leftSlots=['上衣','下装','鞋'];
+const rightSlots=['帽子','眼镜','包'];
+const categories=[...leftSlots,...rightSlots];
+const baseStorageKey='shiyi-wardrobe-v1';
+let key=baseStorageKey;
+const slotIcons={'上衣':'shirt','下装':'pants','鞋':'shoe','帽子':'hat','眼镜':'glasses','包':'bag'};
+function icon(name){const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.classList.add('icon');svg.setAttribute('aria-hidden','true');const use=document.createElementNS('http://www.w3.org/2000/svg','use');use.setAttribute('href','#i-'+name);svg.append(use);return svg}
+function emptyState(title,description,action){const box=node('div');box.className='empty-state';box.append(icon('hanger'),node('h3',title),node('p',description));if(action)box.append(button('添加第一件衣服',action));return box}
+let state;
+try{state=JSON.parse(localStorage.getItem(key))}catch{}
+if(!state||!Array.isArray(state.items)||!Array.isArray(state.looks))state={items:[],looks:[]};
+state.items=state.items.filter(item=>item.source!=='示例'||item.image);
+let selected=state.selection||state.preview?.selected||{};
+let messageTimer;function message(value){clearTimeout(messageTimer);el('status').textContent=value;if(value&&!value.includes('正在')&&!value.includes('生成仍在进行'))messageTimer=setTimeout(()=>el('status').textContent='',6000)}
+function persist(next){next={...next,selection:{...selected}};try{localStorage.setItem(key,JSON.stringify(next));state=next;return true}catch{message('浏览器存储不足或不可用，请减少照片数量。');return false}}
+function node(tag,value){const n=document.createElement(tag);if(value)n.textContent=value;return n}
+function button(label,action){const b=node('button',label);b.type='button';b.onclick=action;return b}
+let filter="全部";
+function render(){
+ el('filters').replaceChildren(...['全部',...categories].map(category=>{
+  const control=button(category,()=>{filter=category;render();el('filters').querySelector('[aria-pressed=true]').focus()});
+  control.setAttribute('aria-pressed',String(filter===category));return control;
+ }));
+ const photos=state.items.filter(item=>item.image&&categories.includes(item.category));
+ el('closet-count').textContent=photos.length+' 件单品';
+ el('stat-clothes').textContent=photos.length;
+ el('stat-categories').textContent=new Set(photos.map(item=>item.category)).size;
+ el('stat-looks').textContent=state.looks.length;
+ el('saved-count').textContent=state.looks.length+' 套';
+ const visibleItems=photos.filter(item=>filter==='全部'||item.category===filter);
+ el('closet').replaceChildren(...visibleItems.map(item=>{
+  const card=node('article');card.className='card';
+  const photo=node('div');photo.className='card-photo';
+  const img=node('img');img.src=item.image;img.alt=item.name;photo.append(img);
+  const remove=button('×',()=>{
+   if(!confirm('从衣橱移除“'+item.name+'”？已保存的试穿图片会保留。'))return;
+   if(selected[item.category]===item.id)delete selected[item.category];
+   if(persist({...state,items:state.items.filter(x=>x.id!==item.id)})){render();message('已移除单品')}
+  });remove.className='card-menu';remove.setAttribute('aria-label','删除'+item.name);photo.append(remove);
+  const info=node('div');info.className='card-info';info.append(node('strong',item.name),node('small',item.category+' · '+item.source));
+  const chosen=selected[item.category]===item.id;
+  info.append(button(chosen?'已选入搭配 ✓':'加入搭配',()=>{selected[item.category]=item.id;render();message('已加入当前搭配')}));
+  card.append(photo,info);return card;
+ }));
+ if(!visibleItems.length)el('closet').append(emptyState(filter==='全部'?'衣橱，等你来填满':'还没有这类单品','上传已有的衣服，或保存一件想买的单品。',()=>{document.querySelector('.closet-add').open=true;el('file').focus()}));
+ el('slots').replaceChildren(...categories.map(category=>{
+  const label=node('label',category),select=node('select');
+  select.add(new Option('留空',''));
+  state.items.filter(item=>item.category===category).forEach(item=>select.add(new Option(item.name,item.id)));
+  select.value=selected[category]||'';select.onchange=()=>{selected[category]=select.value;render()};label.append(select);return label;
+ }));
+ el('saved').replaceChildren(...state.looks.map((look,index)=>{
+  const card=node('article');card.className='saved-card';
+  const open=button('',()=>{
+   selected=Object.fromEntries(categories.map(category=>[category,look.selected?.[category]||'']));
+   el('title').value=look.title;render();if(look.image)openFullPreview(look.image);message('已打开搭配');
+  });open.className='saved-open';open.setAttribute('aria-label','打开'+look.title);
+  if(look.image){const image=node('img');image.src=look.image;image.alt=look.title;open.append(image)}
+  else{const placeholder=node('div');placeholder.className='saved-placeholder';placeholder.append(icon('layers'));open.append(placeholder)}
+  open.append(node('strong',look.title));
+  const footer=node('div');footer.className='saved-card-footer';footer.append(node('span',look.image?'AI 试穿':'单品搭配'));
+  footer.append(button('删除',()=>{if(confirm('删除这套搭配？')&&persist({...state,looks:state.looks.filter((_,i)=>i!==index)})){render();message('搭配已删除')}}));
+  card.append(open,footer);return card;
+ }));
+ if(!state.looks.length)el('saved').append(emptyState('留住每一次搭配灵感','试穿完成后保存搭配，或制作一张自己的 OOTD。'));
+ persist({...state});
+ renderMirror();
+ paint();
+}
+function loadImage(src){return new Promise((resolve,reject)=>{const image=new Image();image.onload=()=>resolve(image);image.onerror=reject;image.src=src})}
+let frame=0;
+async function paint(){
+ const version=++frame;
+ const items=categories.map(category=>state.items.find(item=>item.id===selected[category])).filter(Boolean);
+ const photos=await Promise.all(items.map(item=>item?.image?loadImage(item.image).catch(()=>null):null));
+ if(version!==frame)return;
+ const c=el('poster').getContext('2d');c.fillStyle='#141518';c.fillRect(0,0,900,1200);c.fillStyle='#f5f1eb';c.font='bold 66px system-ui';c.fillText(el('title').value.trim()||'今日穿搭',64,151,772);c.font='24px system-ui';c.fillText('OOTD / 今日搭配',64,80);
+ const matchesResult=state.preview?.selected&&categories.every(category=>(state.preview.selected[category]||'')===(selected[category]||''));
+ if(matchesResult){
+  const result=await loadImage(state.preview.image).catch(()=>null);
+  if(version!==frame)return;
+  if(result){const scale=Math.min(772/result.width,880/result.height),w=result.width*scale,h=result.height*scale;c.drawImage(result,(900-w)/2,200+(880-h)/2,w,h)}
+ }else{
+ if(!items.length){c.fillStyle='#777478';c.font='32px system-ui';c.textAlign='center';c.fillText('选择你的单品，拼出今日风格',450,610);c.textAlign='start'}
+ items.forEach((item,i)=>{
+  const columns=items.length===1?1:items.length>4?3:2, rows=Math.ceil(items.length/columns);
+  const width=(772-(columns-1)*14)/columns,height=Math.min(items.length<=2?780:400,(900-(rows-1)*12)/rows);
+  const x=64+(i%columns)*(width+14),y=198+Math.floor(i/columns)*(height+12);
+  c.fillStyle='#28292c';c.fillRect(x,y,width,height);
+  const image=photos[i];
+  if(image){const scale=Math.min((width-22)/image.width,(height-54)/image.height),w=image.width*scale,h=image.height*scale;c.drawImage(image,x+(width-w)/2,y+8+(height-54-h)/2,w,h)}
+  else if(item){c.font=Math.min(110,height*.45)+'px system-ui';c.textAlign='center';c.fillText(item.icon,x+width/2,y+height*.55);c.textAlign='start'}
+  c.fillStyle='#f5f1eb';c.font='27px system-ui';c.fillText(item?.name||categories[i],x+10,y+height-14,width-20);
+ });
+ }
+ c.font='24px system-ui';c.fillStyle='#ff8b55';c.fillText('AI 私人衣橱  /  MY DAILY LOOK',64,1148);
+}
+el('add').onsubmit=async event=>{
+ event.preventDefault();const file=el('file').files[0],name=el('name').value.trim();if(!file||!name)return;
+ const category=el('category').value,source=el('source').value,url=URL.createObjectURL(file);
+ try{
+  const photo=await loadImage(url),canvas=document.createElement('canvas'),scale=Math.min(1,720/Math.max(photo.width,photo.height));
+  canvas.width=Math.max(1,Math.round(photo.width*scale));canvas.height=Math.max(1,Math.round(photo.height*scale));const context=canvas.getContext('2d');context.fillStyle='white';context.fillRect(0,0,canvas.width,canvas.height);context.drawImage(photo,0,0,canvas.width,canvas.height);
+  const item={id:crypto.randomUUID(),name,category,source,image:canvas.toDataURL('image/jpeg',.82)};
+  if(persist({...state,items:[...state.items,item]})){selected[category]=item.id;filter=category;el('add').reset();render();message('已添加衣物')}
+ }catch{message('无法读取照片，请尝试 JPG 或 PNG。')}finally{URL.revokeObjectURL(url)}
+};
+el('title').oninput=paint;
+el('save').onclick=()=>{if(!Object.values(selected).some(Boolean)){message('请先选择衣物。');return}
+ const look={title:el('title').value.trim()||'今日穿搭',selected:{...selected}};
+ if(persist({...state,looks:[...state.looks,look]})){render();message('搭配已保存')}
+};
+el('download').onclick=async()=>{await paint();const link=node('a');link.href=el('poster').toDataURL('image/png');link.download='OOTD.png';link.click()};
+
+function page(name){
+ if(name==='mirror'&&(!state.avatar||state.avatarKind==='portrait'))name='onboard';
+ document.querySelector('.tabs').hidden=false;
+ el('page-kicker').textContent={onboard:'你的专属智能穿搭助手',mirror:'每一次心动，都可以先试穿',closet:'收好每一件喜欢的衣服',looks:'记录你的每日风格',me:'每一种风格，都从你开始'}[name];
+ document.querySelectorAll('[data-page]').forEach(panel=>panel.hidden=panel.dataset.page!==name);
+ document.querySelectorAll('[data-tab]').forEach(tab=>tab.setAttribute('aria-current',String(tab.dataset.tab===(name==='onboard'?'me':name))));
+ window.scrollTo(0,0);
+}
+let showOriginal=false;
+let generating=false;
+function renderMirror(){
+ const result=state.preview;
+ const showResult=result&&!showOriginal;
+ el('avatar').src=showResult?result.image:(state.avatar||'avatar.svg');
+ el('avatar-label').textContent=showResult?'AI 试穿预览':(state.avatar?(state.avatarKind==='portrait'?'我的分身 · 模板合成':state.avatarKind==='generated'?'我的分身 · AI 生成':'我的分身 · 人物底图'):'示例分身');
+ const isPrevious=showResult&&result.selected&&JSON.stringify(result.selected)!==JSON.stringify(Object.fromEntries(selectedPhotos().map(item=>[item.category,item.id])));
+ if(isPrevious)el('avatar-label').textContent='上一套试穿';
+ el('preview-note').textContent=showResult?'试穿结果：'+result.name+'。AI 图用于搭配参考。':'';
+ el('original').hidden=!result;
+ el('original').textContent=showResult?'查看人物底图':'查看试穿图';
+ el('save-preview').hidden=!showResult;
+ el('delete-preview').hidden=!result;
+ el('result-tools').hidden=!result;
+ el('save-result').hidden=!showResult||!result.selected;
+ el('clear-avatar').disabled=!state.avatar;
+ el('profile-avatar').src=state.avatar||'avatar.svg';
+ const count=selectedPhotos().length;
+ el('selected-top').textContent=count?'本次试穿 '+count+' 件':'点选两侧服饰栏，从衣橱选择或上传单品';
+ el('selection-count').textContent='已选 '+selectedPhotos().length+' 件';
+ for(const [id,slots] of [['equip-left',leftSlots],['equip-right',rightSlots]])el(id).replaceChildren(...slots.map(category=>{
+  const item=state.items.find(entry=>entry.id===selected[category]);
+  const slot=button('',()=>openPicker(category));
+  slot.setAttribute('aria-pressed',String(Boolean(item)));slot.append(node('strong',category));
+  if(item?.image){const img=node('img');img.src=item.image;img.alt='';slot.append(img)}
+  else{slot.append(icon(slotIcons[category]))}
+  if(item){slot.title=item.name;slot.setAttribute('aria-label',category+' · '+item.name)}
+  return slot;
+ }));
+}
+function openPicker(category){
+ const dialog=el('picker');
+ el('picker-title').textContent='选择'+category;
+ el('picker-upload').value='';
+ el('picker-upload').onchange=event=>{const file=event.target.files[0];if(file){dialog.close();addSlotPhoto(file,category)}};
+ const choose=id=>{selected[category]=id;dialog.close();render()};
+ el('picker-items').replaceChildren(button('留空',()=>choose('')),...state.items.filter(item=>item.category===category).map(item=>{
+  const choice=button(item.name,()=>choose(item.id));choice.className='card';
+  if(item.image){const img=node('img');img.src=item.image;img.alt='';choice.prepend(img)}
+  return choice;
+ }));
+ dialog.showModal();
+}
+document.querySelectorAll('[data-tab]').forEach(tab=>tab.onclick=()=>page(tab.dataset.tab));
+el('to-look').onclick=()=>{message('');page('looks')};
+el('close-picker').onclick=()=>el('picker').close();
+
+function generationBusy(busy){
+ generating=busy;
+ el('tryon-progress').hidden=!busy;
+ document.querySelector('.stage').setAttribute('aria-busy',String(busy));
+ el('generate').disabled=busy;
+ el('generate').textContent=busy?'正在试穿…':(state.tryOnJob?'继续查看进度':'生成试穿图');
+}
+async function api(url, options){
+ const response=await fetch(url, options);
+ const data=await response.json();
+ if(!response.ok){const error=Error(data.error||'服务暂时不可用。');error.status=response.status;throw error}
+ return data;
+}
+async function poll(job){
+ const query=new URLSearchParams({id:job.id,token:job.token});
+ for(let i=0;i<35;i++){
+  const result=await api('/api/try-on?'+query);
+  if(state.tryOnJob?.id!==job.id)return;
+  if(result.status==='failed'){
+   persist({...state,tryOnJob:null});message(result.error);return;
+  }
+  if(result.status==='completed'){
+   const preview={name:job.name,image:result.image,provider:job.provider||result.provider,selected:job.selected};
+   if(!persist({...state,tryOnJob:null,preview})){
+    state={...state,tryOnJob:null,preview};
+    message('试穿成功。浏览器空间不足，请先下载结果。');
+   }else message('试穿已完成。');
+   showOriginal=false;renderMirror();return;
+  }
+  await new Promise(resolve=>setTimeout(resolve,2000));
+ }
+ message('生成仍在进行，可以稍后继续查看进度。');
+}
+el('generate').onclick=async()=>{
+ if(generating)return;
+ const provider=chosenModel;
+ let job=state.tryOnJob;
+ const garments=selectedPhotos();
+ if(!job&&(!state.avatar||state.avatarKind==='portrait')){page('onboard');message('请先上传一张正面全身照。');return}
+ if(!job&&!garments.length){message('请先点击装备槽位，上传或选择带照片的单品。');return}
+ if(!job&&!confirm('本次试穿会把人物照和所选单品图上传至 所选模型服务商，会产生生图费用。请仅使用你有权使用的照片。继续吗？'))return;
+ generationBusy(true);message('正在连接试穿服务…');
+ try{
+  if(!job){
+   const snapshot=Object.fromEntries(garments.map(item=>[item.category,item.id]));
+   const task=await api('/api/try-on',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({provider,person:await personImageData(state.avatar),garments:garments.map(({category,image})=>({category,image}))})});
+   job={...task,name:garments.map(item=>item.name).join('、'),selected:snapshot};
+   if(!persist({...state,tryOnJob:job}))state={...state,tryOnJob:job};
+  }
+  message('正在生成试穿图…');
+  await poll(job);
+ }catch(error){message(error.message||'试穿暂时不可用。')}
+ finally{generationBusy(false)}
+};
+el('original').onclick=()=>{showOriginal=!showOriginal;renderMirror()};
+
+function openFullPreview(source){
+ el('full-preview-image').src=source;
+ el('full-preview').showModal();
+}
+el('avatar').tabIndex=0;
+el('avatar').onclick=()=>openFullPreview(el('avatar').src);
+el('avatar').onkeydown=event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();el('avatar').click()}};
+el('close-preview').onclick=()=>el('full-preview').close();
+el('save-result').onclick=()=>{
+ const result=state.preview;
+ if(!result?.selected)return;
+ const look={title:result.name,selected:{...result.selected},image:result.image};
+ if(persist({...state,looks:[...state.looks,look]})){render();message('搭配已保存')}
+};
+el('save-preview').onclick=()=>{if(!state.preview)return;const link=node('a');link.href=state.preview.image;link.download='AI-试穿.jpg';link.click()};
+el('delete-preview').onclick=()=>{if(persist({...state,preview:null}))renderMirror()};
+el('clear-avatar').onclick=()=>{
+ if(generating||avatarPending){message('请在生成结束后再移除照片。');return}
+ if(persist({...state,avatar:null,preview:null,tryOnJob:null})){generationBusy(false);renderMirror();startSetup()}
+};
+let avatarDraft=null;
+let avatarDraftId=null;
+let avatarKind="photo";
+let avatarPending=false;
+let photoMode='full';
+let fullReference=null;
+let avatarDraftSettings=null;
+let profileConfig=null;
+function profileControlId(key){return key==='build'?'portrait-body':'portrait-'+key}
+function readProfile(){
+ if(!profileConfig)throw Error('身形选项尚未加载，请稍后重试。');
+ const profile=Object.fromEntries(profileConfig.fields.map(field=>[field.key,el(profileControlId(field.key)).value]));
+ profile.height=el('portrait-height').value.trim()===''?null:Number(el('portrait-height').value);
+ return profile;
+}
+function profilePairs(){
+ if(!profileConfig)return [];
+ return profileConfig.fields.map(field=>[field.label,field.options.find(option=>option.value===el(profileControlId(field.key)).value)?.label||'未选择']);
+}
+function profileSummary(){
+ const p=readProfile(),parts=[appearanceLabels[selectedAppearance()]];
+ for(const field of profileConfig.fields)if(field.key==='build'||p[field.key]!=='natural')parts.push(field.options.find(o=>o.value===p[field.key]).label);
+ if(p.height!==null)parts.push('身高 '+p.height+' cm');
+ parts.push(el('portrait-pose').selectedOptions[0].text);return parts.join(' · ');
+}
+function updateProfileSource(resetBuild=false){
+ const build=el('portrait-body');if(!build)return;
+ const original=Array.from(build.options).find(o=>o.value==='preserve');if(original){original.disabled=photoMode!=='full';original.hidden=photoMode!=='full'}
+ if(resetBuild)build.value=photoMode==='full'?'preserve':'medium';
+ if(photoMode!=='full'&&build.value==='preserve')build.value='medium';
+ el('portrait-file').required=photoMode==='face';
+ el('profile-source-hint').textContent=photoMode==='full'?'默认保留全身照中的体型，也可以选择整体体型或调整局部描述。':'头像无法确定全身体型，请选择接近自己的体型，再按需补充局部描述。';
+}
+async function loadProfileConfig(){
+ try{
+  const config=await api('/api/avatar/config');
+  if(!Array.isArray(config.fields)||config.fields.length!==5||!config.prompt_version)throw Error();
+  profileConfig=config;const wrap=el('profile-fields');wrap.replaceChildren();
+  const regional=node('details'),summary=node('summary','细调肩、腰、臀与上下身比例');regional.append(summary);const grid=node('div');grid.className='regional-fields';regional.append(grid);
+  for(const field of config.fields){const label=node('label',field.label),select=node('select');select.id=profileControlId(field.key);for(const option of field.options)select.add(new Option(option.label,option.value));select.value=field.default;select.onchange=()=>showPortraitStep(portraitStep);label.append(select);if(field.key==='build')wrap.append(label);else grid.append(label)}
+  wrap.append(regional);el('portrait-next-body').disabled=false;el('reload-profile-config').hidden=true;updateProfileSource();if(!el('portrait-form').hidden&&!avatarDraft)showPortraitStep(portraitStep);else renderSetup();return true;
+ }catch{el('portrait-next-body').disabled=true;el('reload-profile-config').hidden=false;el('profile-fields').replaceChildren(node('p','身形选项暂时无法加载，请重试。'));return false}
+}
+el('reload-profile-config').onclick=loadProfileConfig;
+function renderProfileReview(){
+ const pairs=[['照片方式',photoMode==='full'?'全身照':'头像'],['分身外观',appearanceLabels[selectedAppearance()]],...profilePairs(),['身高',el('portrait-height').value.trim()?el('portrait-height').value+' cm':'未填写'],['站姿',el('portrait-pose').selectedOptions[0].text]];
+ el('review-settings').replaceChildren(...pairs.flatMap(([label,value])=>[node('dt',label),node('dd',value)]));
+ el('review-photo').src=photoMode==='full'?fullReference:el('portrait-crop').toDataURL('image/jpeg',.9);
+ el('review-description').textContent=profileSummary();
+}
+
+let portraitStep=1;
+const appearanceLabels={preserve:'保持照片原貌',female:'女性外观',male:'男性外观'};
+function selectedAppearance(){return document.querySelector('input[name=appearance]:checked').value}
+function showPortraitStep(step){
+ if(avatarPending)return;
+ portraitStep=step;
+ document.querySelector('.onboarding').dataset.avatarStep=String(step);
+ el('avatar-flow-track').hidden=false;
+ document.querySelectorAll('[data-portrait-step]').forEach(panel=>panel.hidden=Number(panel.dataset.portraitStep)!==step);
+ document.querySelectorAll('[data-flow-step]').forEach(item=>{const n=Number(item.dataset.flowStep);item.setAttribute('aria-current',n===step?'step':'false');item.classList.toggle('done',n<step)});
+ if(profileConfig)el('portrait-summary').textContent=profileSummary();
+ if(step===4&&profileConfig)renderProfileReview();
+ el('setup-step').textContent='0'+step+' / '+['','上传照片','选择分身外观','身形描述与站姿','确认生成描述'][step];
+}
+function goPortraitStep(step){showPortraitStep(step);const heading=document.querySelector('[data-portrait-step="'+step+'"] h3');heading.tabIndex=-1;heading.focus({preventScroll:true});window.scrollTo(0,0)}
+el('portrait-next-photo').onclick=()=>{if(portraitReference)goPortraitStep(2)};
+el('portrait-back-photo').onclick=()=>{if(photoMode==='full'&&fullReference){avatarKind='photo';avatarDraft=fullReference;avatarDraftSettings=null;renderSetup()}else goPortraitStep(1)};
+el('portrait-next-appearance').onclick=()=>goPortraitStep(3);
+el('portrait-back-appearance').onclick=()=>goPortraitStep(2);
+el('portrait-next-body').onclick=()=>{if(el('portrait-height').reportValidity())goPortraitStep(4)};
+el('portrait-back-body').onclick=()=>goPortraitStep(3);
+el('portrait-height').oninput=()=>showPortraitStep(portraitStep);
+document.querySelectorAll('input[name=appearance]').forEach(input=>input.onchange=()=>showPortraitStep(portraitStep));
+function startSetup(){
+ if(avatarPending){message('请等待当前分身生成完成。');return}
+ choosePhotoMode('full');
+ el('portrait-form').reset();
+ fullReference=null;avatarDraftSettings=null;avatarDraftId=null;
+ if(profileConfig){for(const field of profileConfig.fields)el(profileControlId(field.key)).value=field.default;updateProfileSource(true)}
+ el('portrait-next-photo').disabled=true;
+ showPortraitStep(1);
+ portraitReference=null;portraitFile=null;
+ el('crop-panel').hidden=true;el('crop-controls').hidden=true;
+
+ avatarDraft=null;
+ renderSetup();
+ page('onboard');
+}
+function renderSetup(){
+ el('setup-input').hidden=Boolean(avatarDraft);
+ el('setup-preview').hidden=!avatarDraft;
+ el('confirm-hint').textContent=avatarKind==='generated'?'已保存到分身库。请检查面部、身形与站姿，确认后设为当前试衣分身。':'可直接使用这张全身照，不调用生图。若需调整身形，请选择“设置身形后生成”。';
+ el('confirm-avatar').textContent=avatarKind==='photo'?'直接使用这张照片':'设为当前分身';
+ el('reselect-avatar').textContent=avatarKind==='photo'?'重新选照片':'返回调整描述';
+ el('setup-step').textContent=avatarDraft?(avatarKind==='generated'?'05 / 预览与确认':'02 / 确认分身'):'01 / 创建分身';
+ if(!avatarDraft&&!el('portrait-form').hidden)showPortraitStep(portraitStep);
+ el('setup-title').textContent=avatarDraft?'预览你的分身':'创建你的数字分身';
+ el('cancel-setup').hidden=!state.avatar||state.avatarKind==='portrait';
+ el('download-avatar-draft').hidden=!avatarDraft;
+ if(avatarDraft){el('draft-avatar').src=avatarDraft;document.querySelector('.onboarding').dataset.avatarStep='5';document.querySelectorAll('[data-flow-step]').forEach(item=>{const n=Number(item.dataset.flowStep);item.setAttribute('aria-current',n===5?'step':'false');item.classList.toggle('done',n<5)})}
+ el('customize-full').hidden=!avatarDraft||avatarKind!=='photo';
+ el('avatar-flow-track').hidden=avatarKind==='photo'&&Boolean(avatarDraft)||el('portrait-form').hidden&&!avatarDraft;
+ if(!avatarDraft)el('draft-avatar').removeAttribute('src');
+}
+async function uploadAvatar(event){
+ if(avatarPending)return;
+ const file=event.target.files[0];if(!file)return;
+ if(generating){message('请在生成结束后再更换照片。');event.target.value='';return}
+ const url=URL.createObjectURL(file);
+ try{
+  const image=await loadImage(url),canvas=node('canvas'),scale=Math.min(1,1200/Math.max(image.width,image.height));
+  canvas.width=Math.max(1,Math.round(image.width*scale));canvas.height=Math.max(1,Math.round(image.height*scale));
+  const context=canvas.getContext('2d');context.fillStyle='#f5ede1';context.fillRect(0,0,canvas.width,canvas.height);context.drawImage(image,0,0,canvas.width,canvas.height);
+  avatarKind='photo';avatarDraft=canvas.toDataURL('image/jpeg',.85);fullReference=avatarDraft;avatarDraftSettings=null;avatarDraftId=null;renderSetup();message('');el('confirm-avatar').focus();
+ }catch{message('无法读取照片，请尝试 JPG 或 PNG。')}finally{URL.revokeObjectURL(url);event.target.value=''}
+};
+
+
+
+
+let portraitReference=null;
+let portraitFile=null;
+function paintCrop(){
+ if(!portraitReference)return;
+ const photo=portraitReference,canvas=el('portrait-crop');
+ const side=Math.min(photo.width,photo.height)/Number(el('crop-zoom').value);
+ const x=(photo.width-side)*Number(el('crop-x').value)/100;
+ const y=(photo.height-side)*Number(el('crop-y').value)/100;
+ const ctx=canvas.getContext('2d');
+ ctx.fillStyle='#eeeae4';ctx.fillRect(0,0,512,512);ctx.drawImage(photo,x,y,side,side,0,0,512,512);
+}
+async function preparePortrait(file){
+ if(portraitFile===file&&portraitReference)return;
+ const url=URL.createObjectURL(file);
+ try{
+  const photo=await loadImage(url);
+  if(el('portrait-file').files[0]!==file)return;
+  portraitReference=photo;portraitFile=file;
+  el('crop-panel').hidden=false;el('crop-controls').hidden=false;paintCrop();
+ }finally{URL.revokeObjectURL(url)}
+}
+el('portrait-file').onchange=async event=>{
+ const file=event.target.files[0];
+ el('portrait-next-photo').disabled=true;
+ if(!file){portraitReference=null;portraitFile=null;el('crop-panel').hidden=true;el('crop-controls').hidden=true;return}
+ el('crop-zoom').value=1;el('crop-x').value=50;el('crop-y').value=50;
+ try{await preparePortrait(file);el('portrait-next-photo').disabled=!portraitReference}catch{portraitReference=null;portraitFile=null;message('无法读取头像，请尝试 JPG 或 PNG。')}
+};
+['crop-zoom','crop-x','crop-y'].forEach(id=>el(id).oninput=paintCrop);
+el('portrait-pose').onchange=()=>showPortraitStep(portraitStep);
+
+el('portrait-form').onsubmit=async event=>{
+ event.preventDefault();
+ if(avatarPending||generating)return;
+ if(portraitStep!==4)return;
+ if(!profileConfig){message('请先加载身形选项。');return}
+ if(!await ensureAvatarAccount())return;
+ const file=el('portrait-file').files[0];
+ if(photoMode==='face'&&!file||photoMode==='full'&&!fullReference)return;
+ const requestedProfile=readProfile(),requestedSource=photoMode;
+ const controls=['choose-full','choose-face','portrait-back-appearance','portrait-back-photo','portrait-next-photo','portrait-next-appearance','portrait-next-body','portrait-back-body','portrait-file','portrait-body','portrait-shoulder','portrait-waist','portrait-hip','portrait-proportion','portrait-height','portrait-pose','portrait-generate','avatar-file','cancel-setup','crop-zoom','crop-x','crop-y'];
+ if(!confirm('人物照片会发送至所选模型服务商，每次生成会消耗平台 API 费用。AI 可能未完全遵循身形描述。继续生成吗？'))return;
+ avatarPending=true;document.querySelectorAll('input[name=appearance]').forEach(x=>x.disabled=true);controls.forEach(id=>el(id).disabled=true);el('portrait-generate').textContent='正在生成分身…';
+ message('正在为你建立全身分身，请保持页面打开。');
+ try{
+  if(requestedSource==='face')await preparePortrait(file);
+  const canvas=el('portrait-crop');
+  const task=await submitAvatarRequest({
+   person:requestedSource==='full'?fullReference:canvas.toDataURL('image/jpeg',.9),source:requestedSource,profile:requestedProfile,prompt_version:profileConfig.prompt_version,appearance:selectedAppearance(),pose:el('portrait-pose').value
+  });
+  const query=new URLSearchParams({id:task.id,token:task.token});
+  for(let i=0;i<150;i++){
+   const result=await api('/api/avatar?'+query);
+   if(result.status==='failed'){forgetAvatarRequest();throw Error(result.error)}
+   if(result.status==='completed'){
+    avatarKind='generated';avatarDraft=result.image;avatarDraftId=result.avatar_id||task.id;forgetAvatarRequest();avatarDraftSettings=task.settings||{profile:requestedProfile,appearance:selectedAppearance(),pose:el('portrait-pose').value,source:requestedSource,prompt_version:profileConfig.prompt_version};renderSetup();message('');el('confirm-avatar').focus();return;
+   }
+   await new Promise(resolve=>setTimeout(resolve,2000));
+  }
+  throw Error('所选模型服务商 生成耗时超过五分钟。请稍后重试。');
+ }catch(error){message(error.message||'生成分身失败。')}
+ finally{avatarPending=false;document.querySelectorAll('input[name=appearance]').forEach(x=>x.disabled=false);controls.forEach(id=>el(id).disabled=false);el('portrait-generate').textContent='确认并生成分身';refreshAccount().catch(()=>{});renderQuota()}
+};
+function choosePhotoMode(mode){
+ photoMode=mode;updateProfileSource();
+ el('full-choice').hidden=mode!=='full';
+ el('portrait-form').hidden=mode!=='face';
+ el('choose-full').setAttribute('aria-pressed',String(mode==='full'));
+ el('choose-face').setAttribute('aria-pressed',String(mode==='face'));
+ if(mode==='face'){if(portraitStep>1&&!portraitReference)portraitStep=1;showPortraitStep(portraitStep)}else{el('setup-step').textContent='01 / 创建分身';document.querySelector('.onboarding').dataset.avatarStep='1';el('avatar-flow-track').hidden=true}
+}
+el('choose-full').onclick=()=>{if(!avatarPending)choosePhotoMode('full')};
+el('choose-face').onclick=()=>{if(!avatarPending)choosePhotoMode('face')};
+el('avatar-file').onchange=uploadAvatar;
+el('change-avatar').onclick=()=>{if(generating){message('请在生成结束后再更换分身。');return}message('');startSetup()};
+el('reselect-avatar').onclick=()=>{if(avatarKind==='generated'&&(portraitReference||fullReference)){avatarDraft=null;avatarDraftSettings=null;renderSetup();el('full-choice').hidden=true;el('portrait-form').hidden=false;showPortraitStep(3);message('')}else{startSetup();el('avatar-file').focus()}};
+el('customize-full').onclick=()=>{if(!fullReference||avatarPending)return;avatarDraft=null;avatarDraftSettings=null;photoMode='full';el('full-choice').hidden=true;el('portrait-form').hidden=false;updateProfileSource(true);renderSetup();goPortraitStep(2)};
+el('cancel-setup').onclick=()=>{avatarDraft=null;renderSetup();page('me');message('')};
+el('confirm-avatar').onclick=async()=>{
+ if(!avatarDraft||generating)return;
+ const saved=await saveAvatarBeforeConfirm();if(!saved)return;
+ if(persist({...state,avatar:saved.source,avatarId:saved.id,avatarKind,avatarSettings:avatarKind==='generated'?avatarDraftSettings:null,preview:null,tryOnJob:null})){
+  avatarDraft=null;renderSetup();generationBusy(false);renderMirror();page('mirror');message('分身已就绪，选择喜欢的衣服开始试穿。');
+ }
+};
+function selectedPhotos(){return categories.map(category=>state.items.find(item=>item.id===selected[category])).filter(item=>item?.image)}
+function addSlotPhoto(file,category){
+ const files=new DataTransfer();
+ files.items.add(file);
+ el('file').files=files.files;
+ el('name').value=file.name.replace(/\.[^.]+$/,'').trim().slice(0,24)||'我的'+category;
+ el('category').value=category;
+ el('source').value='已有';
+ el('add').requestSubmit();
+}
+el('quick-top').onchange=event=>{const input=event.target;if(input.files[0])addSlotPhoto(input.files[0],'上衣');input.value=''};
+el('header-profile').onclick=()=>page('me');
+el('mirror-profile').onclick=()=>page('me');
+el('profile-tryon').onclick=()=>page('mirror');
+categories.forEach(category=>el('category').add(new Option(category,category)));
+choosePhotoMode('full');render();renderSetup();page('mirror');generationBusy(false);
+loadProfileConfig();
+if(state.tryOnJob&&state.avatar)el('generate').click();
+</script><script src="/account-export.js"></script><script src="/agent-chat.js"></script></body></html>

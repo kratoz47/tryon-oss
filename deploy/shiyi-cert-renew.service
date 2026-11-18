@@ -1,0 +1,5 @@
+[Unit]
+Description=Renew Shiyi HTTPS certificate
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/certbot renew --cert-name tryon.example.com --quiet --deploy-hook "nginx -t && systemctl reload nginx"

@@ -1,0 +1,4 @@
+Pillow>=11,<13
+qrcode==8.2
+alibabacloud_dysmsapi20170525==4.6.0
+fal-client==1.0.3

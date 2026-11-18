@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="640" viewBox="0 0 360 640" role="img" aria-label="示例时装分身">
+<ellipse cx="180" cy="592" rx="99" ry="12" fill="#b9a798" opacity=".4"/>
+<path d="M151 71q18-29 48-8 21 16 20 70l-6 41h-70l-4-61q-2-24 12-42" fill="#362b28"/>
+<path d="M165 132h31v38h-31z" fill="#b87f62"/><ellipse cx="181" cy="107" rx="29" ry="38" fill="#cf9777"/>
+<path d="M149 98q0-41 33-41 31 1 34 43-21-1-36-20-13 14-31 18" fill="#362b28"/>
+<path d="M164 107h7m20 0h7m-23 19q7 5 13 0" fill="none" stroke="#53382e" stroke-width="2" stroke-linecap="round"/>
+<path d="M129 177 104 278l-8 65 15 8 18-56 24-85m76-33 25 101 8 65-15 8-18-56-24-85" fill="#cf9777"/>
+<path d="M164 157q17 21 34 0l33 18 13 50-26 10-10-22 4 94h-64l4-94-10 22-26-10 13-50z" fill="#f9f1e1" stroke="#c8b8a7" stroke-width="2"/>
+<path d="M148 296h64l19 252h-36l-15-166-14 166h-37z" fill="#405449"/>
+<path d="M178 306v58m-24-57-8 27m60-27 8 27" fill="none" stroke="#697a67" stroke-width="2"/>
+<path d="M132 543h34l-4 31-12 10h-39q-5-11 14-21zm64 0h33l7 20q19 10 15 21h-39l-13-10z" fill="#f8f5ea" stroke="#a99d90" stroke-width="2"/>
+</svg>
